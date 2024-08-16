@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "myuser",
+    "password": "mypassword",
+    "database": "snapnet",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "myuser",
+    "password": "mypassword",
+    "database": "snapnet_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "myuser",
+    "password": "mypassword",
+    "database": "snapnet_prod",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
