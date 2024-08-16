@@ -16,7 +16,11 @@ router.use(authenticateJWT);
 router.get("/", async (req: Request, res: Response) => {
   try {
     const warehouses = await Warehouse.findAll();
-    res.status(200).json(warehouses);
+    res.status(200).json({
+      statusCode: 200,
+      message: "warehouses Fetched successfully",
+      warehouses,
+    });
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve warehouses" });
   }
@@ -32,7 +36,11 @@ router.get("/:id", async (req: Request, res: Response) => {
       return res.status(404).json({ error: "Warehouse not found" });
     }
 
-    res.status(200).json(warehouse);
+    res.status(200).json({
+      statusCode: 200,
+      message: "Warehouse Fetched successfully",
+      warehouse,
+    });
   } catch (error) {
     res.status(500).json({ error: "Failed to retrieve warehouse" });
   }
@@ -48,6 +56,11 @@ router.post(
     try {
       const warehouse = await Warehouse.create({ name, location });
       res.status(201).json(warehouse);
+      res.status(201).json({
+        statusCode: 201,
+        message: "Warehouse Created successfully",
+        warehouse,
+      });
     } catch (error) {
       res.status(500).json({ error: "Failed to create warehouse" });
     }
@@ -70,7 +83,11 @@ router.put(
       }
 
       await warehouse.update({ name, location });
-      res.status(200).json(warehouse);
+      res.status(200).json({
+        statusCode: 200,
+        message: "Warehouse updated successfully",
+        warehouse,
+      });
     } catch (error) {
       res.status(500).json({ error: "Failed to update warehouse" });
     }
@@ -89,9 +106,12 @@ router.delete(
       if (!warehouse) {
         return res.status(404).json({ error: "Warehouse not found" });
       }
-
       await warehouse.destroy();
-      res.status(200).json({ message: "Warehouse deleted successfully" });
+      res.status(200).json({
+        statusCode: 200,
+        message: "Warehouse deleted successfully",
+        warehouse,
+      });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete warehouse" });
     }
