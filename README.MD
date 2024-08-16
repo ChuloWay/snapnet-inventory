@@ -54,6 +54,10 @@ To set up the project locally, follow these steps:
 - **MYSQL**: SQL database for storing user data, Inventory details.
 - **SEQUELISE**: Elegant ORM for Node.js applications.
 
+## API DOCUMENTATION
+[Postman Collection](https://documenter.getpostman.com/view/33585837/2sA3s7kUqt)
+
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.

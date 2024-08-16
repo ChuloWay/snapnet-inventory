@@ -27,7 +27,7 @@ router.post(
         password: hashedPassword,
         role,
       });
-
+      
       res.status(200).json({
         statusCode: 201,
         message: "User created successfully",
